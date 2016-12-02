@@ -1,0 +1,267 @@
+
+// Xola UI Controls
+//
+// This is the controls used in Xola website like buttons, navigations menu...
+//
+//
+// Styleguide 2.0
+
+// Navigation bar(left or right)
+//
+//
+// Here you can see how navigation menus can be aligned eigther left or right.
+//
+// .navbar-right - the person is a designer
+// .navbar-left - the person is a software developer
+//
+// markup:
+// <nav class="navbar navbar-default">
+//        <div class="collapse navbar-collapse">
+//            <ul class="nav nav-pills navbar-nav {$modifiers}">
+//                <li><a href="https://www.xola.com/tour">Product</a></li>
+//                <li><a href="#pricing">Pricing</a></li>
+//                <li><a href="#case-studies">Reviews</a></li>
+//            </ul>
+//        </div>
+//</nav>
+//
+// Styleguide 2.1
+
+.navbar-collapse {
+    overflow-x: visible;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar {
+    font-family: $xola-default-fonts;
+    font-size: $xola-default-font-size;
+    padding: 30px 0;
+    margin: 0;
+    border-color: transparent;
+    -webkit-transition: background .25s, padding .25s, height .25s;
+    transition: background .25s, padding .25s, height .25s;
+    z-index: 99;
+
+    .navbar-left {
+        width: 40%;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .navbar-right {
+        width: 40%;
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .navbar-nav {
+        display: table;
+        table-layout: fixed;
+        &:before,
+        &:after {
+            display: none;
+        }
+        & > li{
+          display: table-cell;
+          vertical-align: middle;
+          float: none;
+          width: auto;
+          & > a{
+            display: inline;
+            text-align: center;
+            vertical-align: top;
+            &:not(.btn) {
+                padding: 0;
+                background-color: transparent;
+                border-radius: 0;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                    opacity: .8;
+                    background-color: transparent;
+                    border-color: #fff;
+                }
+            }
+            &:hover,&:active,&.active {
+                color: $xola-navbar-color;
+                border-color:$xola-navbar-border-color;
+            }
+          }
+          &.btn {
+              color: #fff;
+              text-transform: none;
+              vertical-align: top;
+          }
+        }
+    }
+
+}
+
+// Navigation bar(left and right)
+//
+// List of people with information about them.
+//
+// The people listing molecule is composed of the Simple Grid Atom and the Person Information Card Atom.
+// Exercise 2.1a: Add support for a third role "administrator" to the card
+// styles.
+//
+// markup:
+// <nav class="navbar navbar-default">
+//        <div class="collapse navbar-collapse">
+//            <ul class="nav nav-pills navbar-nav navbar-left">
+//                <li><a href="https://www.xola.com/tour">Product</a></li>
+//                <li><a href="#pricing">Pricing</a></li>
+//                <li><a href="#case-studies">Reviews</a></li>
+//            </ul>
+//            <ul class="nav nav-pills navbar-nav navbar-right">
+//                <li><a href="http://blog.xola.com">Xola University</a></li>
+//                <li><a href="https://xola.com/seller">Login</a></li>
+//                <li><a href="/demo" class="btn btn-warning">Free demo</a></li>
+//            </ul>
+//        </div>
+//</nav>
+//
+// Styleguide 2.2
+
+.navbar-collapse {
+    overflow-x: visible;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar {
+    font-family: $xola-default-fonts;
+    font-size: $xola-default-font-size;
+    padding: 30px 0;
+    margin: 0;
+    border-color: transparent;
+    -webkit-transition: background .25s, padding .25s, height .25s;
+    transition: background .25s, padding .25s, height .25s;
+    z-index: 99;
+
+    .navbar-left {
+        width: 40%;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .navbar-right {
+        width: 40%;
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .navbar-nav {
+        display: table;
+        table-layout: fixed;
+        &:before,
+        &:after {
+            display: none;
+        }
+        & > li{
+          display: table-cell;
+          vertical-align: middle;
+          float: none;
+          width: auto;
+          & > a{
+            display: inline;
+            text-align: center;
+            vertical-align: top;
+            &:not(.btn) {
+                padding: 0;
+                background-color: transparent;
+                border-radius: 0;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                    opacity: .8;
+                    background-color: transparent;
+                    border-color: #fff;
+                }
+            }
+            &:hover,&:active,&.active {
+                color: $xola-navbar-color;
+                border-color:$xola-navbar-border-color;
+            }
+          }
+          &.btn {
+              color: #fff;
+              text-transform: none;
+              vertical-align: top;
+          }
+        }
+    }
+
+}
+
+// Buttons
+//
+// List of buttons used for success, warning, information and danger.
+//
+//
+// .btn-info - information in blue-green color
+// .btn-warning - Warning in orange color
+// .btn-success - Success in green color
+// .btn-danger - Danger in red color
+//
+// markup:
+//<a href="/demo" class="btn {$modifiers}">Free demo</a>
+//
+// Styleguide 2.3
+
+@mixin xola-button-variant($color, $background, $border) {
+  font-family: $xola-default-fonts;
+  font-size: $xola-default-font-size;
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $background;
+        border-color: $border;
+  }
+  &:hover {
+    color: $color;
+    background-color: $background;
+        border-color: $border;
+  }
+  &:active,
+  &.active{
+    color: $color;
+    background-color: $background;
+        border-color: $border;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+}
+// Success appears as green
+.btn.btn-success {
+  @include xola-button-variant($btn-success-color, $xola-btn-success-bg, $btn-success-border);
+}
+// Info appears as blue-green
+.btn.btn-info {
+  @include xola-button-variant($btn-info-color, $xola-btn-info-bg, $btn-info-border);
+}
+// Warning appears as orange
+.btn.btn-warning {
+  @include xola-button-variant($btn-warning-color, $xola-btn-warning-bg, $btn-warning-border);
+}
+// Danger and error appear as red
+.btn.btn-danger {
+  @include xola-button-variant($btn-danger-color, $xola-btn-danger-bg, $btn-danger-border);
+}

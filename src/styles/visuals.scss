@@ -1,0 +1,101 @@
+
+// Xola typography
+//
+// This is the banner and sub sections shown in xola website.
+//
+// Styleguide 1.0
+
+// Banner card
+//
+// An info card with the name and description of a person.
+//
+// We add eg- (exempli gratia) in front of all our styles to put them in their
+// own "namespace".  Your prefix would ideally be unique to the project you are
+// working on.  This atom defines the "person info" block. Its main class is
+// therefore called eg-person-info
+//
+// markup:
+// <div class="visual">
+//    <div class="container">
+//        <h1>BOOKING &amp; MARKETING SOFTWARE</h1>
+//        <p>Built for businesses offering tours and activities</p>
+//    </div>
+//  </div>
+//
+// Styleguide 1.1
+
+.visual {
+    height: 600px;
+    white-space: nowrap;
+    text-align: center;
+    font: 29px/1.2 "Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding: 120px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
+    background-color: #666;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+    &:after{
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 1px;
+      margin-right: -1px;
+    }
+    .container {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        white-space: normal;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+    h1 {
+        font-size: 80px;
+        text-transform: uppercase;
+        color: inherit;
+    }
+}
+
+// Feature sections
+//
+// An info card with the name and description of a person.
+//
+// We add eg- (exempli gratia) in front of all our styles to put them in their
+// own "namespace".  Your prefix would ideally be unique to the project you are
+// working on.  This atom defines the "person info" block. Its main class is
+// therefore called eg-person-info
+//
+// markup:
+//<section class="section">
+//  <header class="section-heading text-center container">
+//      <div>
+//          <h2>Mobile</h2>
+//          <p>Run your business on the go.<br>Whenever. Wherever.</p>
+//      </div>
+//  </header>
+//</section>
+//
+// Styleguide 1.2
+.section-heading {
+    font-family: $xola-default-fonts;
+    font-size: $xola-default-font-size;
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 18px;
+    line-height: 1.22;
+    color: $xola-section-heading-text-color;
+    &h2{
+      margin: 0 0 10px;
+    }
+    &:before {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 20px;
+        background: $xola-section-heading-bg-color;
+        margin: 0 auto 10px;
+      }
+  }
