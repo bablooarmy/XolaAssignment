@@ -3,6 +3,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 var styleguide = require('sc5-styleguide');
 
 // Path definitions
@@ -12,6 +13,7 @@ var htmlWild = sourcePath + '/**/*.html';
 var styleSourcePath = sourcePath + '/styles';
 var scssWild = styleSourcePath + '/*.scss';
 var scssRoot = styleSourcePath + '/main.scss';
+var xolaStyles = styleSourcePath + '/css/*.css';
 var overviewPath = styleSourcePath + '/README.md';
 
 var buildPath = 'build';
@@ -21,6 +23,16 @@ var styleguideBuildPath = buildPath + styleguideAppRoot;
 
 var tmpPath = 'tmp';
 var styleguideTmpPath = tmpPath + '/styleguide';
+
+//xola fonts
+var xolaFonts = "src/assets/fonts/**";
+var xolaFontsBuildPath = styleguideBuildPath + "/fonts";
+var xolaFontsTmpPath = styleguideTmpPath + "/fonts";
+
+//xola images
+var xolaImages = "src/assets/images/**";
+var xolaImagesBuildPath = styleguideBuildPath + "/images";
+var xolaImagesTmpPath = styleguideTmpPath + "/images";
 
 // Building the application
 //
@@ -54,16 +66,18 @@ gulp.task('scss', function() {
 gulp.task('staticStyleguide:generate', function() {
   return gulp.src(scssWild)
     .pipe(styleguide.generate({
-        title: 'My First Hosted Styleguide',
+        title: 'Xola Development Styleguide',
         rootPath: styleguideBuildPath,
         appRoot: styleguideAppRoot,
-        overviewPath: overviewPath
+        overviewPath: overviewPath,
+        commonClass: ['body-class html-class']
       }))
     .pipe(gulp.dest(styleguideBuildPath));
 });
 
 gulp.task('staticStyleguide:applystyles', function() {
-  return gulp.src(scssRoot)
+  return gulp.src([scssRoot,xolaStyles])
+    .pipe(concat('all.scss'))
     .pipe(sass({
       errLogToConsole: true
     }))
@@ -72,6 +86,22 @@ gulp.task('staticStyleguide:applystyles', function() {
 });
 
 gulp.task('staticStyleguide', ['staticStyleguide:generate', 'staticStyleguide:applystyles']);
+
+//copy assets like images, fonts, icons used in Xola website into build or development build folder
+//so that you can use them in markup element as background image or icons used in button
+gulp.task('staticFonts', function() {
+  gulp.src(xolaFonts)
+    // Do image sprites, optimizations etc.
+    .pipe(gulp.dest(xolaFontsBuildPath));
+});
+
+gulp.task('staticImages', function() {
+  gulp.src(xolaImages)
+    // Do image sprites, optimizations etc.
+    .pipe(gulp.dest(xolaImagesBuildPath));
+});
+
+gulp.task('staticAssets', ['staticImages', 'staticFonts']);
 
 // Running styleguide development server to view the styles while you are working on them
 //
@@ -85,13 +115,15 @@ gulp.task('styleguide:generate', function() {
         title: 'Xola Development Styleguide',
         server: true,
         rootPath: styleguideTmpPath,
-        overviewPath: overviewPath
+        overviewPath: overviewPath,
+        commonClass: ['body-class html-class']
       }))
     .pipe(gulp.dest(styleguideTmpPath));
 });
 
 gulp.task('styleguide:applystyles', function() {
-  return gulp.src(scssRoot)
+  return gulp.src([scssRoot,xolaStyles])
+    .pipe(concat('all.scss'))
     .pipe(sass({
       errLogToConsole: true
     }))
@@ -101,9 +133,25 @@ gulp.task('styleguide:applystyles', function() {
 
 gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
+//copy assets like images, fonts, icons used in Xola website into build or development build folder
+//so that you can use them in markup element as background image or icons used in button
+gulp.task('fonts', function() {
+  gulp.src(xolaFonts)
+    // Do image sprites, optimizations etc.
+    .pipe(gulp.dest(xolaFontsTmpPath));
+});
+
+gulp.task('images', function() {
+  gulp.src(xolaImages)
+    // Do image sprites, optimizations etc.
+    .pipe(gulp.dest(xolaImagesTmpPath));
+});
+
+gulp.task('assets', ['images', 'fonts']);
+
 // Developer mode
 
-gulp.task('dev', ['html', 'scss', 'styleguide'], function() {
+gulp.task('dev', ['html', 'scss', 'assets', 'styleguide'], function() {
     gulp.watch(htmlWild, ['html']);
     gulp.watch(scssWild, ['scss', 'styleguide']);
     console.log(
@@ -113,7 +161,7 @@ gulp.task('dev', ['html', 'scss', 'styleguide'], function() {
 
 // The basic build task
 
-gulp.task('default', ['html', 'scss', 'staticStyleguide'], function() {
+gulp.task('default', ['html', 'scss', 'staticAssets', 'staticStyleguide'], function() {
     console.log(
         '\nBuild complete!\n\nFresh build available in directory: ' +
         buildPath + '\n\nCheckout the build by commanding\n' +

@@ -9,10 +9,37 @@
 // Navigation bar(left or right)
 //
 //
-// Here you can see how navigation menus can be aligned eigther left or right.
+// Here you can see how navigation menus can be aligned either left or right.
 //
-// .navbar-right - the person is a designer
-// .navbar-left - the person is a software developer
+// <table class="table">
+// 	<caption>Navigation menu item &lt;a&gt; content was rendered using these css properties</caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>16px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>300</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#797979</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>inline</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>23px</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>padding</td> <td>0</td> </tr>
+// 		<tr> <th scope="row">11</th> <td>text-align</td> <td>center</td> </tr>
+// 		<tr> <th scope="row">12</th> <td>text-decoration</td> <td>none</td> </tr>
+// 		<tr> <th scope="row">13</th> <td>position</td> <td>relative</td> </tr>
+// 		<tr> <th scope="row">14</th> <td>list-style</td> <td>none</td> </tr>
+// 		<tr> <th scope="row">15</th> <td>border-bottom</td> <td>1px solid transparent</td> </tr>
+// 		<tr> <th scope="row">16</th> <td>border-radius</td> <td>0</td> </tr>
+// 		<tr> <th scope="row">17</th> <td>background-color</td> <td>transparent</td> </tr>
+// 	</tbody>
+// </table>
+//
+// .navbar-right - use this class to align menu items in right-hand side
+// .navbar-left - use this class to align menu items in left-hand side
+//
 //
 // markup:
 // <nav class="navbar navbar-default">
@@ -102,11 +129,33 @@
 
 // Navigation bar(left and right)
 //
-// List of people with information about them.
+// Here sample shows navigation menu items aligned in left and right hand side of the viewport
 //
-// The people listing molecule is composed of the Simple Grid Atom and the Person Information Card Atom.
-// Exercise 2.1a: Add support for a third role "administrator" to the card
-// styles.
+// <table class="table">
+// 	<caption>Navigation menu item &lt;a&gt; content was rendered using these css properties</caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>16px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>300</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#797979</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>inline</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>23px</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>padding</td> <td>0</td> </tr>
+// 		<tr> <th scope="row">11</th> <td>text-align</td> <td>center</td> </tr>
+// 		<tr> <th scope="row">12</th> <td>text-decoration</td> <td>none</td> </tr>
+// 		<tr> <th scope="row">13</th> <td>position</td> <td>relative</td> </tr>
+// 		<tr> <th scope="row">14</th> <td>list-style</td> <td>none</td> </tr>
+// 		<tr> <th scope="row">15</th> <td>border-bottom</td> <td>1px solid transparent</td> </tr>
+// 		<tr> <th scope="row">16</th> <td>border-radius</td> <td>0</td> </tr>
+// 		<tr> <th scope="row">17</th> <td>background-color</td> <td>transparent</td> </tr>
+// 	</tbody>
+// </table>
 //
 // markup:
 // <nav class="navbar navbar-default">
@@ -210,58 +259,122 @@
 // .btn-danger - Danger in red color
 //
 // markup:
-//<a href="/demo" class="btn {$modifiers}">Free demo</a>
+//<a href="/demo" class="btn {$modifiers} btn-lg">Free demo</a>
 //
 // Styleguide 2.3
 
-@mixin xola-button-variant($color, $background, $border) {
-  font-family: $xola-default-fonts;
-  font-size: $xola-default-font-size;
-  color: $color;
-  background-color: $background;
-  border-color: $border;
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 13px 30px;
+    font-size: 16px;
+    line-height: 1.438;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-  &:focus,
-  &.focus {
-    color: $color;
-    background-color: $background;
-        border-color: $border;
-  }
-  &:hover {
-    color: $color;
-    background-color: $background;
-        border-color: $border;
-  }
-  &:active,
-  &.active{
-    color: $color;
-    background-color: $background;
-        border-color: $border;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &:hover,
-    &:focus,
-    &.focus {
-      background-color: $background;
-          border-color: $border;
-    }
-  }
+.btn.btn-lg {
+  line-height: 1.3333;
 }
-// Success appears as green
-.btn.btn-success {
-  @include xola-button-variant($btn-success-color, $xola-btn-success-bg, $btn-success-border);
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 17px 35px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 4px;
 }
-// Info appears as blue-green
-.btn.btn-info {
-  @include xola-button-variant($btn-info-color, $xola-btn-info-bg, $btn-info-border);
-}
-// Warning appears as orange
-.btn.btn-warning {
-  @include xola-button-variant($btn-warning-color, $xola-btn-warning-bg, $btn-warning-border);
-}
-// Danger and error appear as red
+
+.btn.btn-primary,
+.btn.btn-info,
+.btn.btn-warning,
+.btn.btn-success,
 .btn.btn-danger {
-  @include xola-button-variant($btn-danger-color, $xola-btn-danger-bg, $btn-danger-border);
+  border-color: transparent !important;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:active,
+.btn.btn-primary.active,
+.btn.btn-primary:focus,
+.btn.btn-primary.focus {
+  background-color: #198bbb !important;
+}
+
+.btn.btn-info:hover,
+.btn.btn-info:active,
+.btn.btn-info.active,
+.btn.btn-info:focus,
+.btn.btn-info.focus {
+  background-color: #1b95c9 !important;
+}
+
+.btn.btn-warning:hover,
+.btn.btn-warning:active,
+.btn.btn-warning.active,
+.btn.btn-warning:focus,
+.btn.btn-warning.focus {
+  background-color: #eaa10f !important;
+}
+
+.btn.btn-success:hover,
+.btn.btn-success:active,
+.btn.btn-success.active,
+.btn.btn-success:focus,
+.btn.btn-success.focus {
+  background-color: #70a131 !important;
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:active,
+.btn.btn-danger.active,
+.btn.btn-danger:focus,
+.btn.btn-danger.focus {
+background-color: #c64125 !important;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #33afe4;
+  border-color: #1ea6df;
+}
+
+.btn-info:focus, .btn-info.focus {
+  color: #fff;
+  background-color: #1b95c9;
+  border-color: #0f526f;
+}
+
+.btn-info:hover {
+  color: #fff;
+  background-color: #1b95c9;
+  border-color: #167ea9;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #f2b53a;
+  border-color: #f0ac22;
+}
+
+.btn-warning:focus, .btn-warning.focus {
+  color: #fff;
+  background-color: #eaa10f;
+  border-color: #8a5f09;
+}
+
+.btn-warning:hover {
+  color: #fff;
+  background-color: #eaa10f;
+  border-color: #c88a0d;
 }

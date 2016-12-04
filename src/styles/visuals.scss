@@ -7,22 +7,95 @@
 
 // Banner card
 //
-// An info card with the name and description of a person.
+// Xola banner card has
 //
-// We add eg- (exempli gratia) in front of all our styles to put them in their
-// own "namespace".  Your prefix would ideally be unique to the project you are
-// working on.  This atom defines the "person info" block. Its main class is
-// therefore called eg-person-info
+// Banner &lt;div&gt;  container with background image wrapping a bootstrap responsive fixed width container which wraps the title &lt;h1&gt; and parapgraph &lt;p&gt;
+//
+// Content inside &lt;h1&gt; and &lt;p&gt; are rendered using web font "Maven Pro Light 300"
+//
+// <table class="table">
+// 	<caption><b>&lt;h1&gt; content was rendered using these css properties</b></caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>"Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>80px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>300</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#fff</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>block</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>1.1</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>margin-top</td> <td>23px</td> </tr>
+// 		<tr> <th scope="row">10</th> <td>margin-bottom</td> <td>11.5px</td> </tr>
+// 		<tr> <th scope="row">11</th> <td>text-align</td> <td>center</td> </tr>
+// 		<tr> <th scope="row">12</th> <td>text-shadow</td> <td>rgba(0, 0, 0, 0.4) 1px 1px 2px</td> </tr>
+// 		<tr> <th scope="row">13</th> <td>text-transform</td> <td>uppercase</td> </tr>
+// 		<tr> <th scope="row">14</th> <td>white-space</td> <td>normal</td> </tr>
+// 	</tbody>
+// </table>
+// <br>
+//
+// <table class="table">
+// 	<caption><b>&lt;p&gt; content was rendered using these css properties</b></caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>"Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>29px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#fff</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>block</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>1.2</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>margin-bottom</td> <td>11.5px</td> </tr>
+// 		<tr> <th scope="row">10</th> <td>text-align</td> <td>center</td> </tr>
+// 		<tr> <th scope="row">11</th> <td>text-shadow</td> <td>rgba(0, 0, 0, 0.4) 1px 1px 2px</td> </tr>
+// 		<tr> <th scope="row">12</th> <td>text-transform</td> <td>uppercase</td> </tr>
+// 		<tr> <th scope="row">13</th> <td>white-space</td> <td>normal</td> </tr>
+// 	</tbody>
+// </table>
 //
 // markup:
-// <div class="visual">
-//    <div class="container">
-//        <h1>BOOKING &amp; MARKETING SOFTWARE</h1>
-//        <p>Built for businesses offering tours and activities</p>
-//    </div>
-//  </div>
+//<div id="banner" class="visual video-block" style="background-image: url(/images/banners/hot-air-balloon.png);">
+//     <div class="container">
+//         <h1>BOOKING &amp; MARKETING SOFTWARE</h1>
+//         <p>Built for businesses offering tours and activities</p>
+//     </div>
+//</div>
 //
 // Styleguide 1.1
+.visual h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #666;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 23px;
+    margin-bottom: 11.5px;
+}
+
+.visual .container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    white-space: normal;
+    max-height: 100%;
+    overflow-y: auto;
+}
 
 .visual {
     height: 600px;
@@ -35,67 +108,108 @@
     background-size: cover;
     background-position: 50% 100%;
     background-color: #666;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
-    &:after{
-      content: "";
-      display: inline-block;
-      vertical-align: middle;
-      height: 100%;
-      width: 1px;
-      margin-right: -1px;
-    }
-    .container {
-        display: inline-block;
-        vertical-align: middle;
-        width: 100%;
-        white-space: normal;
-        max-height: 100%;
-        overflow-y: auto;
-    }
-    h1 {
-        font-size: 80px;
-        text-transform: uppercase;
-        color: inherit;
-    }
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-// Feature sections
+// Mobile section
 //
-// An info card with the name and description of a person.
+// Xola mobile section has
 //
-// We add eg- (exempli gratia) in front of all our styles to put them in their
-// own "namespace".  Your prefix would ideally be unique to the project you are
-// working on.  This atom defines the "person info" block. Its main class is
-// therefore called eg-person-info
+// section header &lt;header&gt;  container wrapping a bootstrap responsive fixed width container which wraps the title &lt;h2&gt; and parapgraph &lt;p&gt;
+//
+// Content inside &lt;h2&gt; are rendered using web font "Maven Pro Light 300" whereas &lt;p&gt; content are rendered using local Arial font
+//
+// <table class="table">
+// 	<caption><b>&lt;h2&gt; content was rendered using these css properties</b></caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>"Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>64px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>300</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#333743</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>block</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>1.1</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>margin-bottom</td> <td>10px</td> </tr>
+// 		<tr> <th scope="row">10</th> <td>text-align</td> <td>center</td> </tr>
+// 	</tbody>
+// </table>
+//<br>
+//
+// <table class="table">
+// 	<caption><b>&lt;p&gt; content was rendered using these css properties</b></caption>
+// 	<thead>
+// 		<tr> <th>#</th> <th>CSS Properties</th> <th>Values</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr> <th scope="row">1</th> <td>font-family</td> <td>Helvetica, Arial, sans-serif</td> </tr>
+// 		<tr> <th scope="row">2</th> <td>font-size</td> <td>18px</td> </tr>
+// 		<tr> <th scope="row">3</th> <td>font-style</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">4</th> <td>font-weight</td> <td>normal</td> </tr>
+// 		<tr> <th scope="row">5</th> <td>box-sizing</td> <td>border-box</td> </tr>
+// 		<tr> <th scope="row">6</th> <td>color</td> <td>#9297a3</td> </tr>
+// 		<tr> <th scope="row">7</th> <td>display</td> <td>block</td> </tr>
+// 		<tr> <th scope="row">8</th> <td>line-height</td> <td>1.22</td> </tr>
+// 		<tr> <th scope="row">9</th> <td>margin-bottom</td> <td>11.5px</td> </tr>
+// 		<tr> <th scope="row">10</th> <td>text-align</td> <td>center</td> </tr>
+// 	</tbody>
+// </table>
 //
 // markup:
-//<section class="section">
-//  <header class="section-heading text-center container">
-//      <div>
-//          <h2>Mobile</h2>
-//          <p>Run your business on the go.<br>Whenever. Wherever.</p>
-//      </div>
-//  </header>
-//</section>
+//<div id="content">
+// <section class="section">
+//     <header class="section-heading text-center">
+//         <div class="container">
+//             <h2>Mobile</h2>
+//             <p>Run your business on the go.<br>Whenever. Wherever.</p>
+//         </div>
+//     </header>
+//     <div class="container">
+//         <div class="parallax-block">
+//             <img class="ipad" src="/images/home/ipad.png" height="500" width="810" alt="" data-top-bottom="transform:translateY(-20%) rotate(-2deg);" data-bottom-top="transform:translateY(20%) rotate(2deg);">
+//             <img class="iphone" src="/images/home/iphone.png" height="472" width="329" alt="" data-top-bottom="transform:translateY(-25%) rotate(3deg);" data-bottom-top="transform:translateY(0%) rotate(-3deg);">
+//             <img class="shadow" src="/images/home/ishadow.png" height="60" width="919" alt="">
+//         </div>
+//     </div>
+// </section>
+//</div>
 //
 // Styleguide 1.2
 .section-heading {
-    font-family: $xola-default-fonts;
-    font-size: $xola-default-font-size;
     text-align: center;
     margin: 0 0 30px;
     font-size: 18px;
     line-height: 1.22;
-    color: $xola-section-heading-text-color;
-    &h2{
-      margin: 0 0 10px;
-    }
-    &:before {
-        content: '';
-        display: block;
-        height: 2px;
-        width: 20px;
-        background: $xola-section-heading-bg-color;
-        margin: 0 auto 10px;
-      }
-  }
+    color: #9297a3;
+}
+.section-heading:before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: #25aae2;
+    margin: 0 auto 10px;
+}
+.section-heading h2 {
+    margin: 0 0 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #333743;
+}
+h2, .h2 {
+    font-size: 64px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Maven Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #666;
+}
+p {
+    margin: 0 0 11.5px;
+}

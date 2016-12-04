@@ -1,4 +1,15 @@
-@import 'bootstrap';
 @import 'variables';
 @import 'visuals';
 @import 'controls';
+.body-class {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.438;
+    color: #393939;
+    background-color: #fff;
+}
+.html-class {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}

@@ -1,10 +1,16 @@
 {
   "name": "xola-styleguide",
   "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
   "description": "Xola Styleguide",
   "dependencies": {
     "gulp": "^3.8.11",
     "gulp-sass": "^2.1.1",
-    "sc5-styleguide": "^0.3.10"
+    "sc5-styleguide": "^0.3.10",
+    "gulp-concat": "^2.6.1"
+  },
+  "devDependencies": {
+
   }
 }
